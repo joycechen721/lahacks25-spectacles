@@ -26,18 +26,16 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    itemPrefab: false
-    itemsCount: false
+    {}
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - itemPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
-      itemsCount: !<float> 10.000000
+    -
+      {}
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input Asset.ObjectPrefab itemPrefab
-    - // @input float itemsCount = 10
+    []
   SvgIcon: ""
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

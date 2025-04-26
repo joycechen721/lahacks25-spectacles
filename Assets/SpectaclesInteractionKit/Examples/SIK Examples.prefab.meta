@@ -1813,8 +1813,7 @@
     {}
   ScriptInputs:
     "":
-      itemPrefab: !<reference.ObjectPrefab> 626fa2aa-cf28-45b6-beb9-16cdc571a1e7
-      itemsCount: !<float> 30.000000
+      {}
   ScriptTypes:
     "":
       {}
