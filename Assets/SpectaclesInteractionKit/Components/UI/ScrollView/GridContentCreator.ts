@@ -1,8 +1,54 @@
+import { ScrollView } from "./ScrollView";
+
 /**
  * This class is responsible for creating and positioning grid content items based on a specified prefab and item count. It instantiates the items and arranges them vertically with a specified offset.
  */
 @component
 export class GridContentCreator extends BaseScriptComponent {
+  offsets: number[];
+  curInstr: number = 0;
+
+  physicallyScroll(): void {
+    const scrollView = this.getSceneObject().getParent().getComponent(ScrollView.getTypeName())
+
+    // NOTE only scroll once offset has passed (to simulate centering)
+
+    const {x, y, z} = scrollView.contentPosition
+
+    /* 20 is half of 40, which is the height of the scrollable container */
+    scrollView.contentPosition = new vec3(x, Math.max(0, this.offsets[this.curInstr] - 12), z)
+  }
+
+  scrollToPrevInstruction(): void {
+    if (this.curInstr - 1 < 0) {
+      return
+    }
+
+    // re-render the changed colors
+    const oldCurInstr = this.getSceneObject().getChild(this.curInstr)
+    this.curInstr--;
+    const newCurInstr = this.getSceneObject().getChild(this.curInstr)
+    oldCurInstr.getComponent("Component.Text").textFill.color = new vec4(1, 1, 1, 0.6)
+    newCurInstr.getComponent("Component.Text").textFill.color = new vec4(1, 1, 1, 1)
+
+    this.physicallyScroll()
+}
+
+  scrollToNextInstruction(): void {
+    if (this.curInstr + 1 >= this.offsets.length) {
+      return
+    }
+
+    // re-render the changed colors
+    const oldCurInstr = this.getSceneObject().getChild(this.curInstr)
+    this.curInstr++;
+    const newCurInstr = this.getSceneObject().getChild(this.curInstr)
+    oldCurInstr.getComponent("Component.Text").textFill.color = new vec4(1, 1, 1, 0.6)
+    newCurInstr.getComponent("Component.Text").textFill.color = new vec4(1, 1, 1, 1)
+    
+    this.physicallyScroll()
+  }
+
   getInstructions(): [string, number][] {
     return [
       ["In a large mixing bowl, combine the flour, baking powder, and salt, whisking together until the dry ingredients are evenly distributed throughout.", 3],
@@ -17,14 +63,15 @@ export class GridContentCreator extends BaseScriptComponent {
   }
 
   onAwake(): void {
-    const instructions = this.getInstructions()
+    this.offsets = [];
 
-    const yOffset = -6
+    const instructions = this.getInstructions()
 
     let nextOffset = 0
 
     // TODO create text stub
     for (let i = 0; i < instructions.length; i++) {
+      this.offsets.push(nextOffset);
 
       const stepNumber = i + 1
 
@@ -53,6 +100,11 @@ export class GridContentCreator extends BaseScriptComponent {
 
       const text = target.getComponent("Component.Text")
       text.text = `${stepNumber}. ${instruction}`
+      if (i == this.curInstr) {
+        text.textFill.color = new vec4(1, 1, 1, 1);
+      } else {
+        text.textFill.color = new vec4(0.6, 0.6, 0.6, 1);
+      }
 
       target.enabled = true
     }
