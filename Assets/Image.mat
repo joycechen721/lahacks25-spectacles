@@ -1,16 +1,10 @@
-- !<Material/34d12d25-3725-4d16-941a-8df1fe4a9f81>
+- !<Material/36e9b375-fcc5-4e3a-b2ae-e1fb21c3f101>
   PackagePath: ""
   PassesInfo:
-    - !<own> 477b6a58-5643-42c9-b2d4-384df2855065
-- !<PassInfo/477b6a58-5643-42c9-b2d4-384df2855065>
+    - !<own> f64dd189-c61d-4fe7-880a-7e242b854645
+- !<PassInfo/f64dd189-c61d-4fe7-880a-7e242b854645>
   CachedProperties:
-    - baseTexBorderColor:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    - baseTexDims:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    - baseTexUvMinMax:
+    - Port_Default_N369:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   DepthWrite: false
@@ -24,16 +18,16 @@
   FrustumCullPad: 0.000000
   InstanceCount: 1
   Defines:
-    - ENABLE_BASE_TEX
     - NODE_13_DROPLIST_ITEM 0
     - NODE_27_DROPLIST_ITEM 0
     - NODE_49_DROPLIST_ITEM 0
     - NODE_69_DROPLIST_ITEM 0
+    - ENABLE_BASE_TEX
   BlendMode: PremultipliedAlphaAuto
   Properties:
     Port_Default_N204:
       typeIdx: 1
-      value: 1.000000
+      value: 0.000000
     PreviewEnabled:
       typeIdx: 0
       value: 0
@@ -43,13 +37,13 @@
     baseTex:
       typeIdx: 9
       value:
-        id: 9a3ef244-b1c7-428a-a54e-f65966086b10
+        id: 9f4d1695-b8d3-41f1-8a4b-a1f6bcfd1b7a
         sampler:
-          filteringMode: Bilinear
+          filteringMode: Trilinear
           wrapModeU: ClampToEdge
           wrapModeV: ClampToEdge
-          wrapModeW: Repeat
-          borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+          wrapModeW: ClampToEdge
+          borderColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
           mipmaps: false
         type: Texture2D
     baseTexTransform:
@@ -67,6 +61,4 @@
     overrideTimeEnabled:
       typeIdx: 0
       value: 0
-  Pass: !<reference> ff93f1bb-0f0b-4e34-8e24-07af75f33935
-  RTCaster: false
-  RTReceiver: false
+  Pass: !<reference> 7da3c06c-52b8-489e-bef1-6acc9636d864

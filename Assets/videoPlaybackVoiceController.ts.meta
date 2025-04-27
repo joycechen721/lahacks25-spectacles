@@ -1,0 +1,54 @@
+- !<AssetImportMetadata/dfa53a16-4b43-4bdd-95e2-8e88469517c2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> bae04fba-6296-4b1a-9b39-b2c52eb87b4f
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> bae04fba-6296-4b1a-9b39-b2c52eb87b4f
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> f166724f-8554-45bc-8670-43ea1f1af8fd
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/f166724f-8554-45bc-8670-43ea1f1af8fd>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 92bd119f-7dc3-427c-a4b9-348d516d33f1
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    buttonImage: false
+    commandDelay: false
+    listeningMicImage: false
+    normalMicImage: false
+    text: false
+    videoController: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - videoController: !<MappingBased.videoplayback> 00000000-0000-0000-0000-000000000000
+      text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      commandDelay: 1.500000
+      buttonImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      normalMicImage: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      listeningMicImage: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input videoplayback videoController {"hint":"Reference to the video controller script"}'
+    - '// @input Component.Text text {"hint":"Text component to display transcriptions"}'
+    - '// @input float commandDelay = 0.5 {"hint":"Delay time (in seconds) to wait before confirming a command"}'
+    - '// @input Component.Image buttonImage {"hint":"The button image component to swap icons"}'
+    - '// @input Asset.Texture normalMicImage {"hint":"Texture for the normal mic icon (listening off)"}'
+    - '// @input Asset.Texture listeningMicImage {"hint":"Texture for the listening mic icon (listening on)"}'
