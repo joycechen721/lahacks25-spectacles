@@ -1,0 +1,58 @@
+- !<AssetImportMetadata/e4049263-cc82-4a46-b13f-dbcdd72fa524>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b7c259e9-b4df-4fd0-bdca-a67c8169af8d
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b7c259e9-b4df-4fd0-bdca-a67c8169af8d
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> a7e751ff-17fb-4954-be39-f1a82f584c1d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/a7e751ff-17fb-4954-be39-f1a82f584c1d>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: cb282e47-7f68-42c1-8d42-b13877370ba0
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    disabledMaterial: false
+    meshVisuals: false
+    timerText: false
+    toggledOffMaterial: false
+    toggledOffSelectMaterial: false
+    toggledOnMaterial: false
+    toggledOnSelectMaterial: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - timerText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      toggledOffMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      toggledOffSelectMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      toggledOnMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      toggledOnSelectMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      disabledMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshVisuals: !<reference.RenderMeshVisual[]>
+        []
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.Text timerText
+    - // @input Asset.Material toggledOffMaterial
+    - // @input Asset.Material toggledOffSelectMaterial
+    - // @input Asset.Material toggledOnMaterial
+    - // @input Asset.Material toggledOnSelectMaterial
+    - // @input Asset.Material disabledMaterial
+    - "// @input Component.RenderMeshVisual[] meshVisuals = {}"

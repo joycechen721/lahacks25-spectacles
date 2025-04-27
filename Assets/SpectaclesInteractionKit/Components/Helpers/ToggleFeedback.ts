@@ -1,3 +1,4 @@
+import { NewScript } from "../../../videoplayback"
 import {validate} from "../../Utils/validate"
 import {Interactable} from "../Interaction/Interactable/Interactable"
 import {ToggleButton} from "../UI/ToggleButton/ToggleButton"
@@ -7,6 +8,8 @@ import {ToggleButton} from "../UI/ToggleButton/ToggleButton"
  */
 @component
 export class ToggleFeedback extends BaseScriptComponent {
+  @input 
+  videoController: NewScript
   @input
   toggledOffMaterial!: Material
   @input
@@ -113,6 +116,8 @@ export class ToggleFeedback extends BaseScriptComponent {
   setupInteractableCallbacks(interactable: Interactable): void {
     validate(this.toggleButton)
 
+    
+
     interactable.onTriggerStart.add(() => {
       this.changeToggleOnMesh(
         this.toggledOnSelectMaterial,
@@ -141,6 +146,13 @@ export class ToggleFeedback extends BaseScriptComponent {
       this.changeMeshes(
         isToggledOn ? this.toggledOnMaterial : this.toggledOffMaterial,
       )
+      
+      if (this.videoController && isToggledOn) {
+        // this.videoController.resumeVideo();
+        this.videoController.pauseVideo();
+      } else {
+        this.videoController.resumeVideo();
+      }
     })
   }
 }
