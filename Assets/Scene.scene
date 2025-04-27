@@ -348,6 +348,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/04457558-001e-427f-b010-bf7d2b5f6181>
+  PrefabRemaps:
+    []
+  Name: World Mesh
+  Enabled: false
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f333226b-0400-455a-b96f-ff7b5c75c7ef
 - !<SceneObject/04bcfafc-c25b-44bb-a64d-64d1cbb5c625>
   PrefabRemaps:
     []
@@ -1064,6 +1079,21 @@
     []
   Components:
     - !<own> 56349c81-f0a5-4f15-b1f3-597e67966545
+- !<SceneObject/14cbe756-0933-43a1-8b39-2683adc457e7>
+  PrefabRemaps:
+    []
+  Name: Object 0
+  Enabled: false
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5229f979-94d5-4743-bcbb-db06c2e81310
+  Components:
+    []
 - !<SceneObject/15cb569c-dc30-41c0-8272-bc93b19bfefc>
   PrefabRemaps:
     []
@@ -4525,6 +4555,21 @@
   Components:
     - !<own> 59a608a8-b3da-48c5-9a40-91a81d6ad7d7
     - !<own> 919413b6-64a9-4b77-b61c-846ee7168b30
+- !<SceneObject/5229f979-94d5-4743-bcbb-db06c2e81310>
+  PrefabRemaps:
+    []
+  Name: worldview
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 754c41a2-0167-48a5-8273-3c4e82ee6e48
 - !<RenderMeshVisual/523c3e4f-7245-4aaa-a1ff-bf7709e30530>
   PrefabRemaps:
     []
@@ -4811,7 +4856,7 @@
   PrefabRemaps:
     []
   Name: PinchButtonCapsuleExample
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -24.000000, y: -17.500000, z: -80.000000}
@@ -6342,6 +6387,23 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/754c41a2-0167-48a5-8273-3c4e82ee6e48>
+  PrefabRemaps:
+    []
+  Name: worldview
+  Enabled: true
+  ScriptAsset: !<reference> 57868ac4-979a-460d-bc18-8aacd5f796a2
+  ScriptInputsDefault:
+    filterEnabled: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetObject: !<reference.SceneObject> f1537008-918e-4f57-a4b7-0572bfb30152
+      filterEnabled: false
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/75fc449d-3891-4ad5-9eb4-903c317e5e23>
   PrefabRemaps:
     []
@@ -11131,6 +11193,8 @@
     - !<own> 1ad285b8-e75a-49bb-ad00-780b7043f31d
     - !<own> 51c845f7-9b38-4c75-b68c-8c513af9eced
     - !<own> c3a23844-423b-44b4-be0c-c3f6f5a7c5be
+    - !<own> 04457558-001e-427f-b010-bf7d2b5f6181
+    - !<own> 14cbe756-0933-43a1-8b39-2683adc457e7
   Components:
     []
 - !<SceneObject/ce0da9db-5033-4cac-bb7e-ab7b81af3687>
@@ -12795,6 +12859,26 @@
     - !<own> eb218206-e27b-4976-85b6-86b1e3876631
     - !<own> 24a30fe3-39ed-4044-86c8-8c779fd112de
     - !<own> 120744aa-9141-4ffe-bb85-1e5ae50c9eb8
+- !<RenderMeshVisual/f333226b-0400-455a-b96f-ff7b5c75c7ef>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 1123ae25-1b22-4ebd-87a5-21a6dfd89c59
+  Mesh: !<reference> d3347f27-ed0d-404a-a5d8-c01edd37e13f
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/f349b786-3a07-4c12-92c3-c76646245ac3>
   PrefabRemaps:
     []
@@ -13040,7 +13124,7 @@
   PrefabRemaps:
     []
   Name: PinchButtonCapsuleExample
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -24.000000, y: -10.000000, z: -80.000000}

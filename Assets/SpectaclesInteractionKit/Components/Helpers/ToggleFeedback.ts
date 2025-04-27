@@ -147,11 +147,17 @@ export class ToggleFeedback extends BaseScriptComponent {
         isToggledOn ? this.toggledOnMaterial : this.toggledOffMaterial,
       )
       
-      if (this.videoController && isToggledOn) {
-        // this.videoController.resumeVideo();
-        this.videoController.pauseVideo();
-      } else {
-        this.videoController.resumeVideo();
+      if (this.videoController) {
+        if (isToggledOn) {
+          // this.videoController.resumeVideo();
+          const v = this.videoController.movie.control as VideoTextureProvider
+          if (v.status === 2)
+            this.videoController.pauseVideo();
+        } else {
+          const v = this.videoController.movie.control as VideoTextureProvider
+          if (v.status === 3)
+            this.videoController.resumeVideo();
+        }
       }
     })
   }

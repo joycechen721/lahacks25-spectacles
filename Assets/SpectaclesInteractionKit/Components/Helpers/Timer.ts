@@ -53,14 +53,14 @@ export class Timer extends BaseScriptComponent {
           // check if the transcription is a number
           const parsedNumber = this.extractNumber(eventData.transcription);
 
-          if (parsedNumber != 0) {
+          if (parsedNumber != 0 && eventData.transcription.includes("timer")) {
             print(`Parsed Number: ${parsedNumber}`);
           // } else {
-            this.voiceMLModule.stopListening();
-            if (this.eventRegistration) {
-              this.voiceMLModule.onListeningUpdate.remove(this.eventRegistration);
-              this.eventRegistration = null;
-            }
+            // this.voiceMLModule.stopListening();
+            // if (this.eventRegistration) {
+            //   this.voiceMLModule.onListeningUpdate.remove(this.eventRegistration);
+            //   this.eventRegistration = null;
+            // }
             // this.toggleButton.enabled = false;
             this.startCountdownTimer(parsedNumber * 60);
           } else {
@@ -218,11 +218,11 @@ export class Timer extends BaseScriptComponent {
       });
       } else {
         print("Toggle button is off");
-        this.voiceMLModule.stopListening();
-        if (this.eventRegistration) {
-          this.voiceMLModule.onListeningUpdate.remove(this.eventRegistration);
-          this.eventRegistration = null;
-        }
+        // this.voiceMLModule.stopListening();
+        // if (this.eventRegistration) {
+        //   this.voiceMLModule.onListeningUpdate.remove(this.eventRegistration);
+        //   this.eventRegistration = null;
+        // }
       }
             
     })
